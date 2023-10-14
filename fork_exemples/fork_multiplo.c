@@ -7,13 +7,13 @@ int a = 0;
 
 void implementacao_filho1(int *a){
         *a = *a + 1;
-        printf("execultando filho 1 = %d\n", getpid());
+        printf("executando filho 1 = %d\n", getpid());
 }
 
 void implementacao_filho2(int *a)
 {
     *a = *a + 2;
-    printf("execultando filho 2 = %d\n", getpid());
+    printf("executando filho 2 = %d\n", getpid());
 }
 
 int main()
@@ -25,6 +25,7 @@ int main()
     if(!filho1)
     {
         implementacao_filho1(&a);
+        printf("PID = %d; Valor de a = %d\n", getpid(), a);
         _exit(0);
     }
     
@@ -35,6 +36,7 @@ int main()
         if (!filho2)
         {
             implementacao_filho2(&a);
+            printf("PID = %d; Valor de a = %d\n", getpid(), a);
             _exit(0);
         }
     }
