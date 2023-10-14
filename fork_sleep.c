@@ -16,7 +16,11 @@ int main()
     }
     else if (pid == 0)
     {
-        printf("Esta é a execução do filho( PID = %d ), cujo pai tem PID =%d \n", getpid(), getppid());
+        printf("Esta é a execução do filho\n");
+        printf("Esperando...\n");
+        sleep(10);
+        printf("Voltou!\n");
+        execlp("/bin/ls", "ls", "-l", NULL);
     }  
     else
     {

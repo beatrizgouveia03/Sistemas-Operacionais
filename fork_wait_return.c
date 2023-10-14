@@ -7,6 +7,7 @@ int main()
 {
 
     pid_t pid;
+    int retorno;
     pid = fork();
 
     if (pid < 0)
@@ -20,8 +21,8 @@ int main()
     }  
     else
     {
-        wait(NULL);
-        printf("Processo-filho finalizado\n");
+        retorno = wait(NULL);
+        printf("Processo-filho finalizado e seu PID era: %d\n", retorno);
     }
 
     return 0;
